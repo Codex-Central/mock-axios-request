@@ -101,12 +101,12 @@ try {
 #### Example of MockApiClientConfig
 ```json
 {
-  endpoint: '/users',
-  status: 200,
-  headers: [],
-  response: [],
-  response: [],
-  delayResponse: 1000
+  "endpoint": "/users",
+  "status": 200,
+  "headers": [],
+  "response": [],
+  "response": [],
+  "delayResponse": 1000
 }
 ```
 
