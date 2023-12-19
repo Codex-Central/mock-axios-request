@@ -3,25 +3,10 @@ Functions to allow test the request and responses in Axios format.
 
 ## Installation
 
-> `npm install --save @types/node`
-
-
-### Attributes of MockApiClientConfig
-
-```json
-{
-  endpoint: '/users', // Mandatory 
-  status: 200, // Mandatory (100 to 599)
-  headers: [], // optional
-  response: [], // optional
-  response: [], // optional
-  delayResponse: 1000, // optional (default: 1000 - in milliseconds)
-}
-```
-
+> `npm install @codexcentral/mock-axios-request`
 
 ## Usage
-### Importing and creating a new instance
+### 1. Importing and creating a new instance
 
 ```javascript
 import { MockApiClient, MockApiClientConfig } from 'mock-axios-request';
@@ -31,7 +16,7 @@ const mockApi = new MockApiClient(baseUrl);
 ```
 
  
-### Mocking a request
+### 2. Mocking a request
 #### GET
 
 ```javascript
@@ -101,5 +86,29 @@ try {
 }
 ```
 
+
+### MockApiClientConfig
+
+| Attribute | Type | Mandatory |
+| ------ | ------ | ------ |
+|  endpoint | `string` | true |
+|  status | `number` | true (100 to 599) |
+|  headers | `array` | false |
+|  response | `array` | false |
+|  response | `array` | false |
+|  delayResponse | `number` | false (default: 1000 - in milliseconds) |
+
+#### Example of MockApiClientConfig
+```json
+{
+  endpoint: '/users',
+  status: 200,
+  headers: [],
+  response: [],
+  response: [],
+  delayResponse: 1000
+}
+```
+
 # Credits
-These code was written by [Roberto Silva Z.](https://www.linkedin.com/in/robertosilvazuniga/), 
+These code was written by [Roberto Silva Z.](https://www.linkedin.com/in/robertosilvazuniga/)
