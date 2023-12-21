@@ -1,6 +1,6 @@
 {
   "name": "@codexcentral/mock-axios-request",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Functions to allow test the request and responses in Axios format",
   "license": "Apache-2.0",
   "main": "dist/index.js",

@@ -9,7 +9,7 @@ Functions to allow test the request and responses in Axios format.
 ### 1. Importing and creating a new instance
 
 ```javascript
-import { MockApiClient, MockApiClientConfig } from 'mock-axios-request';
+import { MockApiClient, MockApiClientConfig } from '@codexcentral/mock-axios-request';
 
 const baseUrl = 'https://example.com/api';
 const mockApi = new MockApiClient(baseUrl);
@@ -43,8 +43,9 @@ try {
 ```javascript
 try {
   const config: MockApiClientConfig = {
-    endpoint: '/users',
+    endpoint: '/users/5',
     status: 201, // Change this for the status you want to test
+    request: { name: 'User 5' },
     response: { id: 5, name: 'User 5' },
   };
   const data = await mockApi.post<{ id: string; name: string }>(config);
@@ -61,6 +62,7 @@ try {
   const config: MockApiClientConfig = {
     endpoint: '/users/5',
     status: 200, // Change this for the status you want to test
+    request: { name: 'User 5' },
     response: { id: 5, name: 'User 5' },
   };
   const data = await mockApi.put<{ id: string; name: string }>(config);
