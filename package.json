@@ -1,10 +1,16 @@
 {
   "name": "@codexcentral/mock-axios-request",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Functions to allow test the request and responses in Axios format",
   "license": "Apache-2.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "axios",
     "mock",
@@ -23,7 +29,9 @@
   },
   "homepage": "https://github.com/Codex-Central/mock-axios-request#readme",
   "scripts": {
-    "build": "rm -rf dist/ && tsc"
+    "build": "rm -rf dist/ && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc --outDir dist/esm --module esnext",
+    "build:cjs": "tsc --outDir dist/cjs --module commonjs"
   },
   "devEngines": {
     "node": ">=18.x",
